@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  build:
+    cmds:
+      - task get
+      - task example:get
+
+  get:
+    cmds:
+      - fvm flutter pub get
+
+  example:get:
+    dir: example
+    cmds:
+      - fvm flutter pub get
+
+  publish:
+    cmds:
+      - fvm flutter pub get
+      - fvm dart format .
+      - fvm flutter pub publish
